@@ -10,6 +10,7 @@ addFileButton.addEventListener('click', () => {
 	const fileInput = document.createElement('input');
 	fileInput.setAttribute('type', 'file');
 	fileInput.setAttribute('multiple', '');
+	fileInput.setAttribute('accept', 'image/*');
 
 	fileInput.addEventListener('change', event => {
 		const files = event.target.files;
@@ -27,7 +28,7 @@ addFileButton.addEventListener('click', () => {
 });
 
 
-const errorPopup = document.body.querySelector('.error-popup');
+const errorPopupWrapper = document.body.querySelector('.error-popup-wrapper');
 const errorPopupCloseButton = document.body.querySelector('.error-popup__close-button');
 const errorPopupOkButton = document.body.querySelector('.error-popup__ok-button');
 
@@ -40,11 +41,11 @@ errorPopupOkButton.addEventListener('click', () => {
 });
 
 function showErrorPopup() {
-	errorPopup.style.display = 'block';
+	errorPopupWrapper.style.display = 'flex';
 }
 
 function hideErrorPopup() {
-	errorPopup.style.display = 'none';
+	errorPopupWrapper.style.display = 'none';
 }
 
 
